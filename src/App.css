@@ -30,6 +30,19 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 10px;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.hidden-review {
+  text-align: right;
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  transition: all 1s;
+  opacity: 0;
 }
 
 .MiriPic {
@@ -48,6 +61,7 @@ body {
   padding: 10px;
   font-size: 12px;
   border-radius: 2px;
+  transition: all 1s;
 }
 
 .App-link {
@@ -55,7 +69,7 @@ body {
 }
 
 form {
-  display: block;
+  display: grid;
 }
 
 input {
@@ -91,9 +105,10 @@ button:hover{
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   text-align: center;
+  z-index: -999;
 }
 
 .shareBox {
@@ -106,3 +121,55 @@ footer {
 .shareBox fbIcon{
   margin-left: 10px;
 }
+
+@media only screen and (max-width: 768px){
+    .App {
+      text-align: center;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  
+    .Review {
+      text-align: right;
+      display: block;
+      padding: 10px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 10px;
+      transition: all 1s;
+      opacity: 1;
+    }
+    
+    .hidden-review {
+      text-align: right;
+      display: flex;
+      padding: 10px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 10px;
+      transition: all 1s;
+      opacity: 0;
+    }
+    
+    .MiriPic {
+      width:100px;
+      height:auto;
+      background: blue;
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+    
+    .WrittenReview {
+      display: block;
+      background: white;
+      padding: 10px;
+      font-size: 12px;
+      border-radius: 2px;
+      transition: all 1s;
+    }
+  
+  }

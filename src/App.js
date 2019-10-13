@@ -10,15 +10,6 @@ export class App extends React.Component{
     review: ['','','']
   }
 
-  openFbPopUp = ()=> {
-    var sharerURL = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" + encodeURI('שלום שמי חגי');
-    window.open(
-      sharerURL,
-      'facebook-share-dialog', 
-      'width=626,height=436'); 
-    return  false;
-  }
-
   GenerateReview=(e)=>{
     const intros = texts[0];
     const middles = texts[1];
@@ -42,17 +33,16 @@ export class App extends React.Component{
     return (
       <div className="App">
             <header>
-              <h1>מחולל הביקורות האוטומטי</h1>
+              <h1>🎬 מחולל הביקורות האוטומטי 🎬</h1>
               <p>בחרו סרט ששרת התרבות מירי רגב תבקר, בלי לצפות בו פעם אחת!</p>
             </header>
             <div>
               <form>
                 <input id='movieName' type="text" placeholder="שם הסרט" value={this.state.movie} onChange={this.onInputSubmit}></input>
-                {this.state.movie !=='' && <button onClick={this.GenerateReview}>מה יש למירי להגיד על {this.state.movie}</button>}
+                {this.state.movie !=='' && <button onClick={this.GenerateReview}>מה יש למירי להגיד על {this.state.movie}?</button>}
               </form>
             </div>
-            {this.state.review[0] !== '' && 
-            <div className="Review">
+            <div className={this.state.review[0] !== '' ? "Review" : "hidden-review"}>
               <img className="MiriPic" src="./profilepic.png"/>
               <div className="WrittenReview">
                 <div>
@@ -64,9 +54,9 @@ export class App extends React.Component{
                 <div>
                   {this.state.review[2]}
                 </div>
-                  <FacebookShareButton className='shareBox' hashtag ='#מירי_רגב_מבקרת_סרטים' quote={this.state.review[0]+'\n'+this.state.review[1]+'\n'+this.state.review[2]} url='https://www.pipi.co.il' ><FacebookIcon className='fbIcon' size='14px' />שתפו שכל העולם ידע</FacebookShareButton>
+                  <FacebookShareButton className='shareBox' hashtag ='#מירי_רגב_מבקרת_סרטים' quote={this.state.review[0]+'\n'+this.state.review[1]+'\n'+this.state.review[2]} url='https://mirireviews.surge.sh' ><FacebookIcon className='fbIcon' size='20px' />שתפו שכל העולם ידע</FacebookShareButton>
               </div>
-            </div>}
+            </div>
             <footer>בקרו אותנו בפייסבוק בעמוד <a href='https://www.facebook.com/mirimovies/'>מירי רגב מבקרת סרטים</a></footer>
       </div>
     );
