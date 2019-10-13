@@ -48,7 +48,7 @@ export class App extends React.Component{
             <div>
               <form>
                 <input id='movieName' type="text" placeholder="שם הסרט" value={this.state.movie} onChange={this.onInputSubmit}></input>
-                <button onClick={this.GenerateReview}>צור ביקורת</button>
+                {this.state.movie !=='' && <button onClick={this.GenerateReview}>מה יש למירי להגיד על {this.state.movie}</button>}
               </form>
             </div>
             {this.state.review[0] !== '' && 
@@ -64,7 +64,7 @@ export class App extends React.Component{
                 <div>
                   {this.state.review[2]}
                 </div>
-                <FacebookShareButton url='https://www.pipi.co.il'><FacebookIcon size='14px' />שתפו שכל העולם ידע</FacebookShareButton>
+                  <FacebookShareButton className='shareBox' hashtag ='#מירי_רגב_מבקרת_סרטים' quote={this.state.review[0]+'\n'+this.state.review[1]+'\n'+this.state.review[2]} url='https://www.pipi.co.il' ><FacebookIcon className='fbIcon' size='14px' />שתפו שכל העולם ידע</FacebookShareButton>
               </div>
             </div>}
             <footer>בקרו אותנו בפייסבוק בעמוד <a href='https://www.facebook.com/mirimovies/'>מירי רגב מבקרת סרטים</a></footer>

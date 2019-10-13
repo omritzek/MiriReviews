@@ -54,6 +54,10 @@ body {
   color: #09d3ac;
 }
 
+form {
+  display: block;
+}
+
 input {
   display:inline-block;
   padding:0.7em 1.4em;
@@ -90,4 +94,15 @@ footer {
   position: absolute;
   bottom: 10px;
   text-align: center;
+}
+
+.shareBox {
+  display: flex;
+  padding: 15px;
+  background: #eeeeee;
+  margin-top: 10px;
+}
+
+.shareBox fbIcon{
+  margin-left: 10px;
 }
