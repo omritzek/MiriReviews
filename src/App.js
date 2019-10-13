@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as texts from './texts.json';
+import {FacebookShareButton, FacebookIcon} from 'react-share';
 
 export class App extends React.Component{
   state = {
@@ -63,7 +64,7 @@ export class App extends React.Component{
                 <div>
                   {this.state.review[2]}
                 </div>
-                <a href=""><button onClick={this.openFbPopUp}>שתפו בפייסבוק</button></a>
+                <FacebookShareButton url='https://www.pipi.co.il'><FacebookIcon size='14px' />שתפו שכל העולם ידע</FacebookShareButton>
               </div>
             </div>}
             <footer>בקרו אותנו בפייסבוק בעמוד <a href='https://www.facebook.com/mirimovies/'>מירי רגב מבקרת סרטים</a></footer>
