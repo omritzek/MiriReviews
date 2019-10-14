@@ -1,5 +1,7 @@
 body {
   background: #eeeeee;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .App {
@@ -109,17 +111,27 @@ footer {
   bottom: 10px;
   text-align: center;
   z-index: -999;
+  width: 80%;
+  left: 10%;
 }
 
 .shareBox {
-  display: flex;
+  display: block;
   padding: 15px;
   background: #eeeeee;
   margin-top: 10px;
+  background-color: #efefef;
+  color: black;
+  box-shadow: 2px 2px #0000001f;
+  font-size: 14px;
 }
 
-.shareBox fbIcon{
-  margin-left: 10px;
+.social {
+  display: flex;
+}
+
+.fbIcon{
+  margin: 5px;
 }
 
 @media only screen and (max-width: 768px){

@@ -2,7 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as texts from './texts.json';
-import {FacebookShareButton, FacebookIcon} from 'react-share';
+import {FacebookShareButton, FacebookIcon,
+  LinkedinShareButton, LinkedinIcon,
+  TwitterShareButton, TwitterIcon,
+  TelegramShareButton, TelegramIcon,
+  WhatsappShareButton, WhatsappIcon} from 'react-share';
 
 export class App extends React.Component{
   state = {
@@ -54,10 +58,18 @@ export class App extends React.Component{
                 <div>
                   {this.state.review[2]}
                 </div>
-                  <FacebookShareButton className='shareBox' hashtag ='#מירי_רגב_מבקרת_סרטים' quote={this.state.review[0]+'\n'+this.state.review[1]+'\n'+this.state.review[2]} url='https://mirireviews.surge.sh' ><FacebookIcon className='fbIcon' size='20px' />שתפו שכל העולם ידע</FacebookShareButton>
+                <div className='shareBox'>
+                  <div>שתפו, שכל העולם ידע:</div>
+                  <div className='social'>
+                  <FacebookShareButton className='fbIcon' hashtag ='#מירי_רגב_מבקרת_סרטים' quote={this.state.review[0]+'\n'+this.state.review[1]+'\n'+this.state.review[2]} url='https://mirireviews.surge.sh' ><FacebookIcon size='40px' /></FacebookShareButton>
+                  <TwitterShareButton className='fbIcon' url='https://mirireviews.surge.sh' hashtags ={['מירי_רגב_מבקרת_סרטים']} title={'ביקרתי את הסרט ' + this.state.movie + ' בלי לראות אותו בכלל. ממש כמו מירי רגב!'} via="מחולל ביקורות הסרטים האוטומטי"><TwitterIcon size='40px' /></TwitterShareButton>
+                  <TelegramShareButton className='fbIcon' title={'ביקרתי את הסרט ' + this.state.movie + ' בלי לראות אותו בכלל. ממש כמו מירי רגב!'} url='https://mirireviews.surge.sh' ><TelegramIcon size='40px' /></TelegramShareButton>
+                  <WhatsappShareButton className='fbIcon' title={'ביקרתי את הסרט ' + this.state.movie + ' בלי לראות אותו בכלל. ממש כמו מירי רגב!'} url='https://mirireviews.surge.sh' ><WhatsappIcon size='40px' /></WhatsappShareButton>
+                  </div>
+                </div>
               </div>
             </div>
-            <footer>בקרו אותנו בפייסבוק בעמוד <a href='https://www.facebook.com/mirimovies/'>מירי רגב מבקרת סרטים</a></footer>
+            <footer>האתר הוא כמובן סטירי. <br/>בקרו אותנו בפייסבוק בעמוד <a href='https://www.facebook.com/mirimovies/'>מירי רגב מבקרת סרטים</a></footer>
       </div>
     );
   }
